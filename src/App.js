@@ -1,24 +1,66 @@
-import logo from './logo.svg';
+import React from 'react';
 import './App.css';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import {
+  ApolloProvider,
+  ApolloClient,
+  InMemoryCache,
+  createHttpLink,
+} from '@apollo/client';
+import { setContext } from '@apollo/client/link/context';
+
+import Home from './pages/Home';
+import Login from './pages/Login';
+import SignUp from './pages/SignUp';
+import Calculator from './pages/Calculator';
+import MyFootprint from './pages/MyFootprint';
+import MyPledges from './pages/MyPledges';
+import NoMatch from './pages/NoMatch';
+//import Donation from './pages/Donation';
+import Navbar from './components/Navbar';
+import Footer from './components/Footer';
+import About from './pages/About';
+//import Dashboard from './pages/Dashboard';
+
+const httpLink = createHttpLink({
+  uri: '/graphql',
+});
+
+const authLink = setContext((_, { headers }) => {
+  const token = localStorage.getItem('id_token');
+  return {
+    headers: {
+      ...headers,
+      authorization: token ? `Bearer ${token}` : '',
+    },
+  };
+});
+
+const client = new ApolloClient({
+  link: authLink.concat(httpLink),
+  cache: new InMemoryCache(),
+});
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p className='text-red-700'>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ApolloProvider client={client}>
+      <Router>
+        <div>
+          <Navbar />
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/signup" element={<SignUp />} />
+            <Route path="/calculator" element={<Calculator />} />
+            <Route path="/myfootprint" element={<MyFootprint />} />
+            <Route path="/mypledges" element={<MyPledges />} />
+            <Route path="/about" element={<About />} />
+            <Route path="*" element={<NoMatch />} />
+          </Routes>
+        </div>
+      </Router>
+      <Footer />
+    </ApolloProvider>
   );
 }
 
