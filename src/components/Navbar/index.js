@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import './style.css';
 import logo from './images/logo.png';
 import Auth from '../../utils/auth';
-
+import {Link} from 'react-router-dom'
 const Navbar = () => {
   const [isNavExpanded, setIsNavExpanded] = useState(false);
   const [isMenuClicked, setIsMenuClicked] = useState(false);
@@ -13,9 +13,9 @@ const Navbar = () => {
         <div className={isNavExpanded ? 'menuNav expanded' : 'menuNav'}>
           <div className={isMenuClicked ? 'menu-icon-close' : 'menu-icon-open'}>
             <ul>
-              <a href="/">
+              <Link to="/">
                 <li>Home</li>
-              </a>
+              </Link>
               <a href="/calculator">
                 <li>Footprint Calculator</li>
               </a>
