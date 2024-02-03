@@ -20,7 +20,7 @@ import NoMatch from './pages/NoMatch';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import About from './pages/About';
-//import Dashboard from './pages/Dashboard';
+import Dashboard from './pages/Dashboard';
 
 const httpLink = createHttpLink({
   uri: 'http://localhost:3001/graphql',
@@ -54,6 +54,7 @@ function App() {
             <Route path="/calculator" element={<Calculator />} />
             <Route path="/myfootprint" element={<MyFootprint />} />
             <Route path="/mypledges" element={<MyPledges />} />
+            <Route path="/dashboard" element={<Dashboard />} />
             <Route path="/about" element={<About />} />
             <Route path="*" element={<NoMatch />} />
           </Routes>

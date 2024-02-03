@@ -10,15 +10,26 @@ export const QUERY_ME = gql`
         _id
         waterEmissions
         electricityEmissions
-        heatEmissions
+        naturalGasEmissions
+        fuelOilEmissions
         createdAt
         updatedAt
       }
       travelData {
         _id
-        vehicleEmissions
+        fourVheelersEmissions
         publicTransitEmissions
-        planeEmissions
+        twoVheelersEmissions
+        collegeBusEmissions
+        createdAt
+        updatedAt
+      }
+      wasteData {
+        _id
+        messFoodEmissions
+        paperWasteEmissions
+        metalWasteEmissions
+        plasticWasteEmissions
         createdAt
         updatedAt
       }

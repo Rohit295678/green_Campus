@@ -26,23 +26,26 @@ export const ADD_USER = gql`
 
 export const ADD_TRAVEL = gql`
   mutation addTravel(
-    $vehicleEmissions: Int!
+    $fourVheelersEmissions: Int!
     $publicTransitEmissions: Int!
-    $planeEmissions: Int!
+    $twoVheelersEmissions: Int!
+    $collegeBusEmissions: Int!
   ) {
     addTravel(
-      vehicleEmissions: $vehicleEmissions
-      publicTransitEmissions: $publicTransitEmissions
-      planeEmissions: $planeEmissions
+      fourVheelersEmissions: $fourVheelersEmissions
+      publicTransitEmissions:$publicTransitEmissions
+      twoVheelersEmissions:$twoVheelersEmissions
+      collegeBusEmissions:$collegeBusEmissions
     ) {
       _id
       username
       email
       travelData {
         _id
-        vehicleEmissions
-        publicTransitEmissions
-        planeEmissions
+        fourVheelersEmissions
+      publicTransitEmissions
+      twoVheelersEmissions
+      collegeBusEmissions
       }
     }
   }
@@ -52,12 +55,14 @@ export const ADD_HOME = gql`
   mutation addHome(
     $waterEmissions: Int!
     $electricityEmissions: Int!
-    $heatEmissions: Int!
+    $naturalGasEmissions: Int!
+    $fuelOilEmissions: Int!
   ) {
     addHome(
       waterEmissions: $waterEmissions
       electricityEmissions: $electricityEmissions
-      heatEmissions: $heatEmissions
+      naturalGasEmissions: $naturalGasEmissions
+      fuelOilEmissions: $fuelOilEmissions
     ) {
       _id
       username
@@ -66,7 +71,35 @@ export const ADD_HOME = gql`
         _id
         waterEmissions
         electricityEmissions
-        heatEmissions
+        naturalGasEmissions
+      fuelOilEmissions
+      }
+    }
+  }
+`;
+
+export const ADD_WASTE = gql`
+  mutation addWaste(
+    $messFoodEmissions: Int!
+    $paperWasteEmissions: Int!
+    $metalWasteEmissions: Int!
+    $plasticWasteEmissions: Int!
+  ) {
+    addWaste(
+      messFoodEmissions: $messFoodEmissions
+      paperWasteEmissions: $paperWasteEmissions
+      metalWasteEmissions: $metalWasteEmissions
+      plasticWasteEmissions:$plasticWasteEmissions
+    ) {
+      _id
+      username
+      email
+      wasteData {
+        _id
+        messFoodEmissions
+      paperWasteEmissions
+      metalWasteEmissions
+      plasticWasteEmissions
       }
     }
   }

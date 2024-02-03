@@ -1,16 +1,16 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 //import Pledges from '../components/Pledges';
- //import { Graph } from '../components/Graph';
+import { Graph } from '../components/Graph';
 import { addCommas } from '../utils/helpers.js';
-//import './assets/css/footprint.css';
+import '../assets/css/footprint.css';
 import { useQuery } from '@apollo/client';
-import { QUERY_ME } from '../utils/queries.js';
+import { QUERY_ME } from '../utils/queries';
 import Auth from '../utils/auth';
+//import ApexChart from '../components/Graph/comapre.js';
 
 const MyFootprint = () => {
   const { data, loading } = useQuery(QUERY_ME);
-
   const { username, homeData, travelData } = data?.me || [];
   if (loading) {
     return <h2>LOADING...</h2>;
@@ -18,16 +18,17 @@ const MyFootprint = () => {
 
   return (
     <div className="footprint">
-      {Auth.loggedIn() ? (
+      {/* {Auth.loggedIn() ? (
         <div>
           <section className="my-footprint">
             <div>
               {homeData?.length || travelData?.length ? (
                 <div className="footprint-data">
-                  <div className="calculations left">
-                    <h1 className="footprint-title">
+                  <div className=" hoverbox">
+                  
+                    <h3>
                       {username}'s Carbon Footprint
-                    </h1>
+                    </h3>
                     <p>
                       Water emissions: {addCommas(homeData[0].waterEmissions)}{' '}
                       kg CO2
@@ -64,20 +65,16 @@ const MyFootprint = () => {
                       )}{' '}
                       kg CO2
                     </p>
-                    
+                    <Link to="/dashboard" >Go to DashBoard</Link>
                   </div>
-                  <div className='calculations right mid'>
-                  <p className="footprint-title-avarage">
-                  The average carbon footprint per person is
-                  <span className="bold"> 583.33 KG CO2e
-                    </span >  per month.
-                    </p>
-
-                    </div>
-                  {/* <div className="graph">
+             
+                  <div className="graph">
                     <Graph graphData={{ homeData, travelData }} />
-                  </div> */}
-                </div>
+                  </div>
+                  {/* <div className="graph1">
+                    <ApexChart graphData={travelData} />
+                    </div> */}
+                {/* </div>
               ) : (
                 <div>
                   <h2 className="no-info-title">
@@ -87,16 +84,16 @@ const MyFootprint = () => {
                     <Link to="/calculator">
                       <button>Go to Calculator</button>
                     </Link>
-                  </div>
+                  </div> */}
                   {/* <Pledges /> */}
-                </div>
+                {/* </div>
               )}
             </div>
-          </section>
+          </section> */}
           {/* <section>
             {homeData.length || travelData.length ? <Pledges /> : ''}
           </section> */}
-        </div>
+        {/* </div>
       ) : (
         <div className="not-logged-in">
           <h2 className="no-info-title">
@@ -106,9 +103,9 @@ const MyFootprint = () => {
             <button type="submit">Log In</button>
           </Link>
         </div>
-      )}
+      )} */} 
     </div>
   );
 };
 
-export default MyFootprint;
+export default MyFootprint;
