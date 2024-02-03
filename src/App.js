@@ -23,7 +23,7 @@ import About from './pages/About';
 //import Dashboard from './pages/Dashboard';
 
 const httpLink = createHttpLink({
-  uri: '/graphql',
+  uri: 'http://localhost:3001/graphql',
 });
 
 const authLink = setContext((_, { headers }) => {

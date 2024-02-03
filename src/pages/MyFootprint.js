@@ -22,7 +22,7 @@ const MyFootprint = () => {
         <div>
           <section className="my-footprint">
             <div>
-              {homeData.length || travelData.length ? (
+              {homeData?.length || travelData?.length ? (
                 <div className="footprint-data">
                   <div className="calculations left">
                     <h1 className="footprint-title">
