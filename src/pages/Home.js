@@ -1,5 +1,5 @@
 import React from 'react';
-//import './assets/css/home.css';
+import '../assets/css/home.css'
 import { Link } from 'react-router-dom';
 // import MeanCountry from './assets/js/meanCountry';
 // import MeanIndividual from './assets/js/meanIndividual';
