@@ -3,8 +3,8 @@ import { useNavigate } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import '../assets/css/calculator.css';
 
-import Select from '@mui/material/Select';
-import { FormControl, InputLabel, MenuItem, Slider } from '@mui/material';
+//import Select from '@mui/material/Select';
+import {  Slider } from '@mui/material';
 
 import { useMutation } from '@apollo/client';
 import { ADD_TRAVEL, ADD_HOME,ADD_WASTE } from '../utils/mutations';

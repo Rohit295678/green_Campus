@@ -1,34 +1,35 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-//import Pledges from '../components/Pledges';
+ import Pledges from '../components/Pledges';
 import { Graph } from '../components/Graph';
 import { addCommas } from '../utils/helpers.js';
 import '../assets/css/footprint.css';
 import { useQuery } from '@apollo/client';
 import { QUERY_ME } from '../utils/queries';
 import Auth from '../utils/auth';
-//import ApexChart from '../components/Graph/comapre.js';
+import ApexChart1 from '../components/usage/comp.js';
+import ApexChart2 from '../components/usage/comp2.js';
+import ApexChart3 from '../components/usage/comp3.js';
 
 const MyFootprint = () => {
   const { data, loading } = useQuery(QUERY_ME);
-  const { username, homeData, travelData } = data?.me || [];
+
+  const { username, homeData, travelData,wasteData } = data?.me || [];
+
   if (loading) {
     return <h2>LOADING...</h2>;
   }
 
   return (
     <div className="footprint">
-      {/* {Auth.loggedIn() ? (
+      {Auth.loggedIn() ? (
         <div>
           <section className="my-footprint">
             <div>
-              {homeData?.length || travelData?.length ? (
+              {homeData?.length || travelData?.length || wasteData?.length ? (
                 <div className="footprint-data">
                   <div className=" hoverbox">
-                  
-                    <h3>
-                      {username}'s Carbon Footprint
-                    </h3>
+                    <h3>{username}'s Carbon Footprint</h3>
                     <p>
                       Water emissions: {addCommas(homeData[0].waterEmissions)}{' '}
                       kg CO2
@@ -38,43 +39,76 @@ const MyFootprint = () => {
                       {addCommas(homeData[0].electricityEmissions)} kg CO2
                     </p>
                     <p>
-                      Heat emissions: {addCommas(homeData[0].heatEmissions)} kg
+                      Natural GAS emissions: {addCommas(homeData[0].naturalGasEmissions)} kg
                       CO2
                     </p>
                     <p>
-                      Vehicle emissions:{' '}
-                      {addCommas(travelData[0].vehicleEmissions)} kg CO2
+                      Fuel Oil emissions: {addCommas(homeData[0].fuelOilEmissions)} kg
+                      CO2
+                    </p>
+                    <p>
+                      Four Wheeler emissions:{' '}
+                      {addCommas(travelData[0].fourVheelersEmissions)} kg CO2
                     </p>
                     <p>
                       Public Transit emissions:{' '}
                       {addCommas(travelData[0].publicTransitEmissions)} kg CO2
                     </p>
                     <p>
-                      Plane emissions: {addCommas(travelData[0].planeEmissions)}{' '}
+                      Two Wheelers emissions: {addCommas(travelData[0].twoVheelersEmissions)}{' '}
+                      kg CO2
+                    </p>
+                    <p>
+                      College Bus emissions: {addCommas(travelData[0].collegeBusEmissions)}{' '}
+                      kg CO2
+                    </p>
+                    <p>
+                      Mess Food Waste: {addCommas(wasteData[0].messFoodEmissions)}{' '}
+                      kg CO2
+                    </p>
+                    <p>
+                      Plastic Waste: {addCommas(wasteData[0].plasticWasteEmissions)}{' '}
+                      kg CO2
+                    </p>
+                    <p>
+                      Paper Waste: {addCommas(wasteData[0].paperWasteEmissions)}{' '}
+                      kg CO2
+                    </p>
+                    <p>
+                      Metal Waste: {addCommas(wasteData[0].metalWasteEmissions)}{' '}
                       kg CO2
                     </p>
                     <p className="total">
                       Your total Carbon Footprint:{' '}
                       {addCommas(
-                        homeData[0].heatEmissions +
+                        homeData[0].naturalGasEmissions +homeData[0].fuelOilEmissions +
                           homeData[0].electricityEmissions +
                           homeData[0].waterEmissions +
-                          travelData[0].vehicleEmissions +
-                          travelData[0].publicTransitEmissions +
-                          travelData[0].planeEmissions
+                          travelData[0].fourVheelersEmissions +travelData[0].twoVheelersEmissions +
+                          travelData[0].publicTransitEmissions +travelData[0].collegeBusEmissions +
+                          wasteData[0].messFoodEmissions+wasteData[0].plasticWasteEmissions+wasteData[0].paperWasteEmissions+wasteData[0].metalWasteEmissions
                       )}{' '}
                       kg CO2
                     </p>
-                    <Link to="/dashboard" >Go to DashBoard</Link>
+                    <a href="/dashboard">Go to DashBoard</a>
                   </div>
-             
+
                   <div className="graph">
                     <Graph graphData={{ homeData, travelData }} />
                   </div>
                   {/* <div className="graph1">
                     <ApexChart graphData={travelData} />
-                    </div> */}
-                {/* </div>
+                  </div> */}
+                  <div className="graph1">
+                    <ApexChart1 graphData={travelData} />
+                  </div>
+                  <div className="graph1">
+                    <ApexChart2 graphData={homeData} />
+                  </div>
+                  <div className="graph1">
+                    <ApexChart3 graphData={wasteData} />
+                  </div>
+                </div>
               ) : (
                 <div>
                   <h2 className="no-info-title">
@@ -84,16 +118,16 @@ const MyFootprint = () => {
                     <Link to="/calculator">
                       <button>Go to Calculator</button>
                     </Link>
-                  </div> */}
-                  {/* <Pledges /> */}
-                {/* </div>
+                  </div>
+                  <Pledges />
+                </div>
               )}
             </div>
-          </section> */}
-          {/* <section>
+          </section>
+          <section>
             {homeData.length || travelData.length ? <Pledges /> : ''}
-          </section> */}
-        {/* </div>
+          </section>
+        </div>
       ) : (
         <div className="not-logged-in">
           <h2 className="no-info-title">
@@ -103,9 +137,9 @@ const MyFootprint = () => {
             <button type="submit">Log In</button>
           </Link>
         </div>
-      )} */} 
+      )}
     </div>
   );
 };
 
-export default MyFootprint;
+export default MyFootprint;
