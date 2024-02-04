@@ -142,7 +142,7 @@ const ApexChart = ({ graphData }) => {
         },
       },
       title: {
-        text: 'Co2 Emission',
+        text: 'Co2 Emissions',
         align: 'left',
       },
       labels: seriesData[0].data.map((_, index) => `Object ${index + 1}`),

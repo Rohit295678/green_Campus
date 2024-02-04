@@ -70,6 +70,13 @@ export function Graph(graphData) {
           maintainAspectRatio: false,
           resizeDelay: 0,
           responsive: true,
+          plugins: {
+            legend: {
+              labels: {
+                color: 'white', // Set the font color of legend labels to white
+              },
+            },
+          },
         }}
       ></Doughnut>
     </div>

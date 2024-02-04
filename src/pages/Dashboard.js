@@ -5,6 +5,7 @@ import { useQuery } from '@apollo/client';
 import { QUERY_ME } from '../utils/queries';
 import Auth from '../utils/auth';
 import ApexChart from "../components/ApexChart";
+import DashboardCard from "../components/DashboardCard";
 
 const Dashboard = ()=>{
     const { data, loading } = useQuery(QUERY_ME);
@@ -88,6 +89,7 @@ const Dashboard = ()=>{
                   {newdata.length > 0 &&(<div className="graph1">
                 <ApexChart graphData={newdata} />
               </div>)}
+               <DashboardCard />
                   </div>
                   ):(<div>Ok</div>)}
               </div>

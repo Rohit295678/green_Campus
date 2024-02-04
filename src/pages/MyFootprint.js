@@ -31,51 +31,51 @@ const MyFootprint = () => {
                   <div className=" hoverbox">
                     <h3>{username}'s Carbon Footprint</h3>
                     <p>
-                      Water emissions: {addCommas(homeData[0].waterEmissions)}{' '}
+                      Water emissions: <span className={`${homeData[0].waterEmissions>5000 ? 'red':'green'}`}>{addCommas(homeData[0].waterEmissions)}{' '}</span>
                       kg CO2
                     </p>
                     <p>
                       Electricity emissions:{' '}
-                      {addCommas(homeData[0].electricityEmissions)} kg CO2
+                      <span className={`${homeData[0].electricityEmissions>5000 ? 'red':'green'}`}>{addCommas(homeData[0].electricityEmissions)}</span> kg CO2
                     </p>
                     <p>
-                      Natural GAS emissions: {addCommas(homeData[0].naturalGasEmissions)} kg
+                      Natural GAS emissions: <span className={`${homeData[0].naturalGasEmissions>5000 ? 'red':'green'}`}>{addCommas(homeData[0].naturalGasEmissions)}</span> kg
                       CO2
                     </p>
                     <p>
-                      Fuel Oil emissions: {addCommas(homeData[0].fuelOilEmissions)} kg
+                      Fuel Oil emissions: <span className={`${homeData[0].fuelOilEmissions>5000 ? 'red':'green'}`}>{addCommas(homeData[0].fuelOilEmissions)}</span> kg
                       CO2
                     </p>
                     <p>
                       Four Wheeler emissions:{' '}
-                      {addCommas(travelData[0].fourVheelersEmissions)} kg CO2
+                      <span className={`${travelData[0].fourVheelersEmissions>5000 ? 'red':'green'}`}>{addCommas(travelData[0].fourVheelersEmissions)}</span> kg CO2
                     </p>
                     <p>
                       Public Transit emissions:{' '}
-                      {addCommas(travelData[0].publicTransitEmissions)} kg CO2
+                      <span className={`${travelData[0].publicTransitEmissions>5000 ? 'red':'green'}`}>{addCommas(travelData[0].publicTransitEmissions)}</span> kg CO2
                     </p>
                     <p>
-                      Two Wheelers emissions: {addCommas(travelData[0].twoVheelersEmissions)}{' '}
+                      Two Wheelers emissions: <span className={`${travelData[0].twoVheelersEmissions>5000 ? 'red':'green'}`}>{addCommas(travelData[0].twoVheelersEmissions)}</span>{' '}
                       kg CO2
                     </p>
                     <p>
-                      College Bus emissions: {addCommas(travelData[0].collegeBusEmissions)}{' '}
+                      College Bus emissions: <span className={`${travelData[0].collegeBusEmissions>5000 ? 'red':'green'}`}>{addCommas(travelData[0].collegeBusEmissions)}</span>{' '}
                       kg CO2
                     </p>
                     <p>
-                      Mess Food Waste: {addCommas(wasteData[0].messFoodEmissions)}{' '}
+                      Mess Food Waste: <span className={`${wasteData[0].messFoodEmissions>5000 ? 'red':'green'}`}>{addCommas(wasteData[0].messFoodEmissions)}</span>{' '}
                       kg CO2
                     </p>
                     <p>
-                      Plastic Waste: {addCommas(wasteData[0].plasticWasteEmissions)}{' '}
+                      Plastic Waste: <span className={`${wasteData[0].plasticWasteEmissions>5000 ? 'red':'green'}`}>{addCommas(wasteData[0].plasticWasteEmissions)}</span>{' '}
                       kg CO2
                     </p>
                     <p>
-                      Paper Waste: {addCommas(wasteData[0].paperWasteEmissions)}{' '}
+                      Paper Waste: <span className={`${wasteData[0].paperWasteEmissions>5000 ? 'red':'green'}`}>{addCommas(wasteData[0].paperWasteEmissions)}</span>{' '}
                       kg CO2
                     </p>
                     <p>
-                      Metal Waste: {addCommas(wasteData[0].metalWasteEmissions)}{' '}
+                      Metal Waste: <span className={`${wasteData[0].metalWasteEmissions>5000 ? 'red':'green'}`}>{addCommas(wasteData[0].metalWasteEmissions)}</span>{' '}
                       kg CO2
                     </p>
                     <p className="total">
