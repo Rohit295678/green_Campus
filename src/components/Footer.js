@@ -13,12 +13,12 @@
 // export default Footer
 
 'use client';
-import logo from '../assets/images/logo-no-background.png'
+// import logo from '../assets/images/logo-no-background.png'
 import { Footer } from 'flowbite-react';
 
 export default function Component() {
   return (
-    <Footer container>
+    <Footer container className=''>
       <div className="w-full text-center ">
         <div className="w-full justify-between sm:flex sm:items-center sm:justify-between">
           <Footer.Brand

@@ -1,18 +1,6 @@
 import { useState ,useContext,useEffect} from "react";
-import Avatar from "@mui/material/Avatar";
-import Button from "@mui/material/Button";
-import CssBaseline from "@mui/material/CssBaseline";
-import TextField from "@mui/material/TextField";
-import FormControlLabel from "@mui/material/FormControlLabel";
-import Checkbox from "@mui/material/Checkbox";
-import { Link ,useNavigate} from "react-router-dom";
-import Grid from "@mui/material/Grid";
-import Box from "@mui/material/Box";
-import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
-import Typography from "@mui/material/Typography";
-import Container from "@mui/material/Container";
-import { createTheme, ThemeProvider } from "@mui/material/styles";
 
+import { Link ,useNavigate} from "react-router-dom";
 import { useMutation } from "@apollo/client";
 import { ADD_USER } from "../utils/mutations";
 import Auth from "../utils/auth";
@@ -20,7 +8,6 @@ import AlertContext from '../Context/Alert/AlertContext'
 
 
 
-const defaultTheme = createTheme();
 
 export default function SignUp() {
   const navigate = useNavigate();
@@ -30,7 +17,7 @@ export default function SignUp() {
     }
   })
   const context = useContext(AlertContext);
-  const {  setnotificationMsg,notificationMsg } = context;
+  const {  setnotificationMsg } = context;
   const [formState, setFormState] = useState({
     username: "",
     email: "",
@@ -38,7 +25,7 @@ export default function SignUp() {
   });
 
   const [addUser, { error }] = useMutation(ADD_USER);
-
+  console.log(error)
   // update state based on form input changes
   const handleChange = (event) => {
     const { name, value } = event.target;
@@ -216,12 +203,7 @@ export default function SignUp() {
                             </div>
                         </div>
                         
-                        <a
-                            href="#"
-                            className="text-xs text-purple-600 hover:underline"
-                        >
-                            Forget Password?
-                        </a>
+                        
                         <div className="flex items-center mt-4">
                             <button onClick={handleFormSubmit}
                             className="w-full px-4 py-2 tracking-wide text-white transition-colors duration-200 transform bg-purple-700 rounded-md hover:bg-purple-600 focus:outline-none focus:bg-purple-600">

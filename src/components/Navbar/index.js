@@ -9,7 +9,7 @@ import {
   Sidebar,
   Menu,
   MenuItem,
-  SubMenu,
+  
   sidebarClasses,
 } from "react-pro-sidebar";
 const Navbar = () => {
@@ -18,8 +18,7 @@ const Navbar = () => {
   const {setnotificationMsg}=context
   const newRef = useRef(null);
 
-  const [isNavExpanded, setIsNavExpanded] = useState(false);
-  const [isMenuClicked, setIsMenuClicked] = useState(false);
+  
   const [isSidebarExpanded, setisSidebarExpanded] = useState(false);
   const handleOutsideClick = (e) => {
     if (newRef.current && !newRef.current.contains(e.target)) {
@@ -100,6 +99,24 @@ const Navbar = () => {
           >
             {" "}
             My Footprint
+          </MenuItem>
+          <MenuItem
+            component={<Link to="/dashboard" />}
+            onClick={() => {
+              setisSidebarExpanded(false);
+            }}
+          >
+            {" "}
+            Dashboard
+          </MenuItem>
+          <MenuItem
+            component={<Link to="/mypledges" />}
+            onClick={() => {
+              setisSidebarExpanded(false);
+            }}
+          >
+            {" "}
+            My Pledges
           </MenuItem>
           <MenuItem
             component={<Link to="/about" />}

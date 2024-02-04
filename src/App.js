@@ -23,13 +23,15 @@ import Footer from "./components/Footer";
 import About from "./pages/About";
 import AlertState from "./Context/Alert/AlertState";
 // import Alert from './components/Alert'
-//import Dashboard from './pages/Dashboard';
+import Dashboard from './pages/Dashboard';
+// import ApexChart from './components/ApexChart';
 // import { ToastContainer } from "react-toastify";
 
 const httpLink = createHttpLink({
-  uri: "http://localhost:3001/graphql",
+  uri: process.env.REACT_APP_BACKEND_URL|| "http://localhost:3001/graphql"
 });
-
+const URL=process.env.REACT_APP_BACKEND_URL
+console.log(URL)
 const authLink = setContext((_, { headers }) => {
   const token = localStorage.getItem("id_token");
   return {
@@ -58,9 +60,11 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/login" element={<Login />} />
             <Route path="/signup" element={<SignUp />} />
+            
             <Route path="/calculator" element={<Calculator />} />
             <Route path="/myfootprint" element={<MyFootprint />} />
             <Route path="/mypledges" element={<MyPledges />} />
+            <Route path="/dashboard" element={<Dashboard />} />
             <Route path="/about" element={<About />} />
             <Route path="*" element={<NoMatch />} />
           </Routes>

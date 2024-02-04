@@ -1,11 +1,12 @@
-.App {
-  text-align: center;
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'Nanum Gothic', sans-serif;
 }
-
 .spacing1{
   height: 60px;
-  
 }
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -28,15 +29,61 @@
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+/* No Match Page */
+
+.no-match {
+  /* background-image: url(./pages/assets/images/bottom-wave-blue.png); */
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  background-repeat: no-repeat;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.no-match p {
+  padding: 50px;
+  font-size: 30px;
+  font-weight: bold;
+}
+:root {
+  --white: #f7f7ff;
+  --light-blue: #bdd5ea;
+  --dark-blue: #243b4a;
+  --green: #566e3d;
+  --brown: #7a4419;
+  --light-brown: #baa898;
+}
+
+body,
+html {
+  height: 100vh;
+  margin: 0;
+  color: var(--dark-blue);
+  background-color: var(--white);
+}
+
+.root {
+  height: 100vh;
+}
+
+button {
+  padding: 15px;
+  border-radius: 10px;
+  font-size: 1.3rem;
+  cursor: pointer;
+}
+
+/* No Match Page */
+
+.no-match {
+  /* background-image: url(./pages/assets/images/bottom-wave-blue.png); */
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  background-repeat: no-repeat;
+}
+
+.no-match p {
+  padding: 50px;
+  font-size: 30px;
+  font-weight: bold;
 }

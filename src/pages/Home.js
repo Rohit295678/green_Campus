@@ -1,7 +1,6 @@
 import React,{useEffect,useState} from "react";
 import "../assets/css/home.css";
-import { Link, useLocation } from "react-router-dom";
-import Carousel from "../components/Carousal";
+import { Link } from "react-router-dom";
 import MeanCountry from "./assets/js/meanCountry";
 import MeanIndividual from "./assets/js/meanIndividual";
 import MeanCountryAnnual from "./assets/js/meanCountryAnnual";
@@ -11,19 +10,14 @@ import bgHome1 from "../assets/images/bg-2.jpg";
 import bgHome2 from '../assets/images/bg-mobile.jpg'
 import "../styles/home.css";
 //import ControlledCarousel from './Slider';
-let slides = [
-  "https://i.pinimg.com/originals/51/82/ac/5182ac536727d576c78a9320ac62de30.jpg",
-  "https://wallpapercave.com/wp/wp3386769.jpg",
-  "https://wallpaperaccess.com/full/809523.jpg",
-  "https://getwallpapers.com/wallpaper/full/5/c/0/606489.jpg",
-];
+
 const Home = () => {
   const [width, setwidth] = useState(window.innerWidth)
   useEffect(() => {
     if(window.innerWidth<600){
       setwidth(window.innerWidth)
     }
-  }, [window.innerWidth])
+  },[width])
   
   // const tempLocation=useLocation();
   // const location=tempLocation.pathname

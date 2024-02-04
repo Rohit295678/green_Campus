@@ -1,6 +1,6 @@
 import AlertContext from "./AlertContext";
 import React, { useState ,useEffect} from "react";
-import { ToastContainer, toast,notify } from "react-toastify";
+import { ToastContainer, toast } from "react-toastify";
 
 const LoginState = (props) => {
   const [notificationMsg, setnotificationMsg] = useState("");

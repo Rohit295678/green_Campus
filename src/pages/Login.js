@@ -1,34 +1,20 @@
 import { useState, useContext, useEffect } from "react";
-import Avatar from "@mui/material/Avatar";
-import Button from "@mui/material/Button";
-import CssBaseline from "@mui/material/CssBaseline";
-import TextField from "@mui/material/TextField";
-import FormControlLabel from "@mui/material/FormControlLabel";
-import Checkbox from "@mui/material/Checkbox";
+
 import { Link, useNavigate } from "react-router-dom";
-import Grid from "@mui/material/Grid";
-import Box from "@mui/material/Box";
-import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
-import Typography from "@mui/material/Typography";
-import Container from "@mui/material/Container";
-import { createTheme, ThemeProvider } from "@mui/material/styles";
+
 import { useMutation } from "@apollo/client";
-import { LOGIN, ADD_USER } from "../utils/mutations";
+import { LOGIN } from "../utils/mutations";
 import Auth from "../utils/auth";
 import "./Login.css";
 import "react-toastify/dist/ReactToastify.css";
 import AlertContext from "../Context/Alert/AlertContext";
 import bgSignIn from "../assets/images/bg-home.jpg";
-import { Javascript } from "@mui/icons-material";
 
-const defaultTheme = createTheme();
 
 export default function SignIn() {
-  const [checked, setChecked] = useState(true);
+  
 
-  const handleRadioChange = () => {
-    setChecked(!checked);
-  };
+ 
   // javascript code
   // useEffect(() => {
   //   const loginText = document.querySelector(".title-text .login");
@@ -63,6 +49,7 @@ export default function SignIn() {
 
   const [formState, setFormState] = useState({ email: "", password: "" });
   const [login, { error }] = useMutation(LOGIN);
+  console.log(error)
   const handleChange = (event) => {
     const { name, value } = event.target;
 
@@ -404,7 +391,7 @@ export default function SignIn() {
           <form className="mt-6">
             <div className="mb-2">
               <label
-                for="email"
+                htmlFor="email"
                 className="block text-sm font-semibold text-white"
               >
                 Email
@@ -419,7 +406,7 @@ export default function SignIn() {
             </div>
             <div className="mb-2">
               <label
-                for="password"
+                htmlFor="password"
                 className="block text-sm font-semibold text-white"
               >
                 Password
@@ -432,7 +419,7 @@ export default function SignIn() {
                 className="block w-full px-4 py-2 mt-2 text-purple-700 bg-white border rounded-md focus:border-purple-400 focus:ring-purple-300 focus:outline-none focus:ring focus:ring-opacity-40"
               />
             </div>
-            <a href="#" className="text-xs text-purple-600 hover:underline">
+            <a href="/login" className="text-xs text-purple-600 hover:underline">
               Forget Password?
             </a>
             <div className="mt-6">
