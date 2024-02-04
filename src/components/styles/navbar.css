@@ -5,7 +5,19 @@
     position: sticky;
     z-index: 1;
     top: 0;
+    width: 100%;
 }
+.container {
+    background: rgba(0,0,0,0.8);
+    position: fixed !important;
+  }
+  
+  @supports (-webkit-backdrop-filter: none) or (backdrop-filter: none) {
+    .container {
+      -webkit-backdrop-filter: blur(10px);
+      backdrop-filter: blur(10px);
+    }
+  }
 .left{
     display: flex;
     justify-content: center;
