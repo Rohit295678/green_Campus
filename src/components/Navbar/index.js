@@ -1,9 +1,10 @@
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState, useRef, useEffect,useContext } from "react";
 import "./style.css";
 import logo from "../../assets/images/logo-no-background.png";
 import Auth from "../../utils/auth";
-import { Link } from "react-router-dom";
+import { Link ,useNavigate} from "react-router-dom";
 import SideMenuImg from "../../assets/images/side-menu.png";
+import AlertContext from '../../Context/Alert/AlertContext'
 import {
   Sidebar,
   Menu,
@@ -12,6 +13,9 @@ import {
   sidebarClasses,
 } from "react-pro-sidebar";
 const Navbar = () => {
+  const navigate=useNavigate();
+  const context=useContext(AlertContext);
+  const {setnotificationMsg}=context
   const newRef = useRef(null);
 
   const [isNavExpanded, setIsNavExpanded] = useState(false);
@@ -111,6 +115,8 @@ const Navbar = () => {
             onClick={() => {
               Auth.logout();
               setisSidebarExpanded(false);
+              setnotificationMsg("Logged out successfully")
+              navigate('/')
             }}
           >
             {" "}

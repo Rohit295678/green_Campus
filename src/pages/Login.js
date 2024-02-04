@@ -98,40 +98,40 @@ export default function SignIn() {
       password: "",
     });
 
-    // for sign Up
   };
-  const [formStateSignUp, setFormStateSignUp] = useState({
-    username: "",
-    email: "",
-    password: "",
-  });
+  // // for sign Up
+  // const [formStateSignUp, setFormStateSignUp] = useState({
+  //   username: "",
+  //   email: "",
+  //   password: "",
+  // });
 
-  const [addUser, { error1 }] = useMutation(ADD_USER);
-  const handleChangeSignUp = (event) => {
-    const { name, value } = event.target;
+  // const [addUser, { error1 }] = useMutation(ADD_USER);
+  // const handleChangeSignUp = (event) => {
+  //   const { name, value } = event.target;
 
-    setFormStateSignUp({
-      ...formStateSignUp,
-      [name]: value,
-    });
-  };
-  const handleFormSubmitSignUp = async (event) => {
-    console.log(formStateSignUp);
-    event.preventDefault();
-    // use try/catch instead of promises to handle errors
-    try {
-      const { data } = await addUser({
-        variables: { ...formStateSignUp },
-      });
+  //   setFormStateSignUp({
+  //     ...formStateSignUp,
+  //     [name]: value,
+  //   });
+  // };
+  // const handleFormSubmitSignUp = async (event) => {
+  //   console.log(formStateSignUp);
+  //   event.preventDefault();
+  //   // use try/catch instead of promises to handle errors
+  //   try {
+  //     const { data } = await addUser({
+  //       variables: { ...formStateSignUp },
+  //     });
 
-      Auth.login(data.addUser.token);
-      setnotificationMsg("Sign Up Successfull");
-      navigate("/calculator");
-    } catch (e) {
-      setnotificationMsg(e.message);
-      console.error(e.message);
-    }
-  };
+  //     Auth.login(data.addUser.token);
+  //     setnotificationMsg("Sign Up Successfull");
+  //     navigate("/calculator");
+  //   } catch (e) {
+  //     setnotificationMsg(e.message);
+  //     console.error(e.message);
+  //   }
+  // };
   // const handleSubmit = (event) => {
   //   event.preventDefault();
   //   const data = new FormData(event.currentTarget);

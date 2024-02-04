@@ -49,8 +49,8 @@ function App() {
   return (
     <ApolloProvider client={client}>
       <Router>
-        <Navbar />
         <AlertState>
+        <Navbar />
           {/* <div className="spacing1"></div> */}
 
           {/* <Alert open1={true}/> */}
