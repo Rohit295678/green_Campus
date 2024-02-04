@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Link } from 'react-router-dom';
-//import '../assets/css/calculator.css';
+import '../assets/css/calculator.css';
 
 import Select from '@mui/material/Select';
 import { FormControl, InputLabel, MenuItem, Slider } from '@mui/material';
@@ -179,6 +179,10 @@ const Calculator = () => {
     const { name, value } = event.target;
   setFormState({ ...formState, [name]: Number(value) });
   }
+  function handleChange1(event) {
+    const { name, value } = event.target;
+    setFormState({...formState, [name]: Number(value)});
+  }
 
   // form handler to submit to calculation functions
   function handleSubmit(event) {
@@ -241,14 +245,14 @@ const Calculator = () => {
                       <label className="slider">Two wheeler MotorBike</label>
                       <Slider
                         sx={{
-                          color: 'green',
-                          margin: '40px 0 15px 0',
-                          '& .MuiSlider-valueLabel': {
-                            borderRadius: '15px',
-                            backgroundColor: 'green',
+                          color: "green",
+                          margin: "40px 0 15px 0",
+                          "& .MuiSlider-valueLabel": {
+                            borderRadius: "15px",
+                            backgroundColor: "green",
                           },
-                          '& .MuiSlider-rail': {
-                            padding: '5px',
+                          "& .MuiSlider-rail": {
+                            padding: "5px",
                           },
                         }}
                         aria-label="Car Miles"
@@ -266,14 +270,14 @@ const Calculator = () => {
                       <label className="slider">Car Miles Per Month</label>
                       <Slider
                         sx={{
-                          color: 'green',
-                          margin: '40px 0 15px 0',
-                          '& .MuiSlider-valueLabel': {
-                            borderRadius: '15px',
-                            backgroundColor: 'green',
+                          color: "green",
+                          margin: "40px 0 15px 0",
+                          "& .MuiSlider-valueLabel": {
+                            borderRadius: "15px",
+                            backgroundColor: "green",
                           },
-                          '& .MuiSlider-rail': {
-                            padding: '5px',
+                          "& .MuiSlider-rail": {
+                            padding: "5px",
                           },
                         }}
                         aria-label="Car Miles"
@@ -291,14 +295,14 @@ const Calculator = () => {
                       <label className="slider">Bus Miles Per Month</label>
                       <Slider
                         sx={{
-                          color: 'green',
-                          margin: '40px 0 15px 0',
-                          '& .MuiSlider-valueLabel': {
-                            borderRadius: '15px',
-                            backgroundColor: 'green',
+                          color: "green",
+                          margin: "40px 0 15px 0",
+                          "& .MuiSlider-valueLabel": {
+                            borderRadius: "15px",
+                            backgroundColor: "green",
                           },
-                          '& .MuiSlider-rail': {
-                            padding: '5px',
+                          "& .MuiSlider-rail": {
+                            padding: "5px",
                           },
                         }}
                         aria-label="Car Miles"
@@ -312,18 +316,18 @@ const Calculator = () => {
                         max={3000}
                       ></Slider>
                     </Box>
-                     <Box sx={{ m: 1, width: 300 }}>
+                    <Box sx={{ m: 1, width: 300 }}>
                       <label className="slider">Train Miles Per Month</label>
                       <Slider
                         sx={{
-                          color: 'green',
-                          margin: '40px 0 15px 0',
-                          '& .MuiSlider-valueLabel': {
-                            borderRadius: '15px',
-                            backgroundColor: 'green',
+                          color: "green",
+                          margin: "40px 0 15px 0",
+                          "& .MuiSlider-valueLabel": {
+                            borderRadius: "15px",
+                            backgroundColor: "green",
                           },
-                          '& .MuiSlider-rail': {
-                            padding: '5px',
+                          "& .MuiSlider-rail": {
+                            padding: "5px",
                           },
                         }}
                         aria-label="Car Miles"
@@ -341,14 +345,14 @@ const Calculator = () => {
                       <label className="slider">Public Transportation</label>
                       <Slider
                         sx={{
-                          color: 'green',
-                          margin: '40px 0 15px 0',
-                          '& .MuiSlider-valueLabel': {
-                            borderRadius: '15px',
-                            backgroundColor: 'green',
+                          color: "green",
+                          margin: "40px 0 15px 0",
+                          "& .MuiSlider-valueLabel": {
+                            borderRadius: "15px",
+                            backgroundColor: "green",
                           },
-                          '& .MuiSlider-rail': {
-                            padding: '5px',
+                          "& .MuiSlider-rail": {
+                            padding: "5px",
                           },
                         }}
                         aria-label="Car Miles"
@@ -369,14 +373,14 @@ const Calculator = () => {
                       <label className="slider">Natural gas</label>
                       <Slider
                         sx={{
-                          color: 'green',
-                          margin: '40px 0 15px 0',
-                          '& .MuiSlider-valueLabel': {
-                            borderRadius: '15px',
-                            backgroundColor: 'green',
+                          color: "green",
+                          margin: "40px 0 15px 0",
+                          "& .MuiSlider-valueLabel": {
+                            borderRadius: "15px",
+                            backgroundColor: "green",
                           },
-                          '& .MuiSlider-rail': {
-                            padding: '5px',
+                          "& .MuiSlider-rail": {
+                            padding: "5px",
                           },
                         }}
                         aria-label="Car Miles"
@@ -394,14 +398,14 @@ const Calculator = () => {
                       <label className="slider">LPG</label>
                       <Slider
                         sx={{
-                          color: 'green',
-                          margin: '40px 0 15px 0',
-                          '& .MuiSlider-valueLabel': {
-                            borderRadius: '15px',
-                            backgroundColor: 'green',
+                          color: "green",
+                          margin: "40px 0 15px 0",
+                          "& .MuiSlider-valueLabel": {
+                            borderRadius: "15px",
+                            backgroundColor: "green",
                           },
-                          '& .MuiSlider-rail': {
-                            padding: '5px',
+                          "& .MuiSlider-rail": {
+                            padding: "5px",
                           },
                         }}
                         aria-label="Car Miles"
@@ -415,18 +419,20 @@ const Calculator = () => {
                         max={3000}
                       ></Slider>
                     </Box>
-                     <Box sx={{ m: 1, width: 300 }}>
-                      <label className="slider">Water Usaed in Liters Per day</label>
+                    <Box sx={{ m: 1, width: 300 }}>
+                      <label className="slider">
+                        Water Usaed in Liters Per day
+                      </label>
                       <Slider
                         sx={{
-                          color: 'green',
-                          margin: '40px 0 15px 0',
-                          '& .MuiSlider-valueLabel': {
-                            borderRadius: '15px',
-                            backgroundColor: 'green',
+                          color: "green",
+                          margin: "40px 0 15px 0",
+                          "& .MuiSlider-valueLabel": {
+                            borderRadius: "15px",
+                            backgroundColor: "green",
                           },
-                          '& .MuiSlider-rail': {
-                            padding: '5px',
+                          "& .MuiSlider-rail": {
+                            padding: "5px",
                           },
                         }}
                         aria-label="Car Miles"
@@ -446,21 +452,21 @@ const Calculator = () => {
                       </label>
                       <Slider
                         sx={{
-                          color: 'green',
-                          margin: '40px 0 15px 0',
-                          '& .MuiSlider-valueLabel': {
-                            borderRadius: '15px',
-                            backgroundColor: 'green',
+                          color: "green",
+                          margin: "40px 0 15px 0",
+                          "& .MuiSlider-valueLabel": {
+                            borderRadius: "15px",
+                            backgroundColor: "green",
                           },
-                          '& .MuiSlider-rail': {
-                            padding: '5px',
+                          "& .MuiSlider-rail": {
+                            padding: "5px",
                           },
                         }}
                         aria-label="Car Miles"
                         defaultValue={1000}
                         onChange={handleChange}
                         valueLabelDisplay="on"
-                        name="carMiles"
+                        name="fuelOil"
                         step={500}
                         marks
                         min={0}
@@ -473,19 +479,19 @@ const Calculator = () => {
                       </label>
                       <Slider
                         sx={{
-                          color: 'green',
-                          margin: '40px 0 15px 0',
-                          '& .MuiSlider-valueLabel': {
-                            borderRadius: '15px',
-                            backgroundColor: 'green',
+                          color: "green",
+                          margin: "40px 0 15px 0",
+                          "& .MuiSlider-valueLabel": {
+                            borderRadius: "15px",
+                            backgroundColor: "green",
                           },
-                          '& .MuiSlider-rail': {
-                            padding: '5px',
+                          "& .MuiSlider-rail": {
+                            padding: "5px",
                           },
                         }}
                         aria-label="Car Miles"
                         defaultValue={1000}
-                        onChange={handleChange}
+                        onChange={handleChange1}
                         valueLabelDisplay="on"
                         name="electricity"
                         step={500}
@@ -502,14 +508,14 @@ const Calculator = () => {
                       <label className="slider">Food Wastage in Kg</label>
                       <Slider
                         sx={{
-                          color: 'green',
-                          margin: '40px 0 15px 0',
-                          '& .MuiSlider-valueLabel': {
-                            borderRadius: '15px',
-                            backgroundColor: 'green',
+                          color: "green",
+                          margin: "40px 0 15px 0",
+                          "& .MuiSlider-valueLabel": {
+                            borderRadius: "15px",
+                            backgroundColor: "green",
                           },
-                          '& .MuiSlider-rail': {
-                            padding: '5px',
+                          "& .MuiSlider-rail": {
+                            padding: "5px",
                           },
                         }}
                         aria-label="Car Miles"
@@ -529,14 +535,14 @@ const Calculator = () => {
                       </label>
                       <Slider
                         sx={{
-                          color: 'green',
-                          margin: '40px 0 15px 0',
-                          '& .MuiSlider-valueLabel': {
-                            borderRadius: '15px',
-                            backgroundColor: 'green',
+                          color: "green",
+                          margin: "40px 0 15px 0",
+                          "& .MuiSlider-valueLabel": {
+                            borderRadius: "15px",
+                            backgroundColor: "green",
                           },
-                          '& .MuiSlider-rail': {
-                            padding: '5px',
+                          "& .MuiSlider-rail": {
+                            padding: "5px",
                           },
                         }}
                         aria-label="Car Miles"
@@ -554,14 +560,14 @@ const Calculator = () => {
                       <label className="slider">Metal Waste in Kg</label>
                       <Slider
                         sx={{
-                          color: 'green',
-                          margin: '40px 0 15px 0',
-                          '& .MuiSlider-valueLabel': {
-                            borderRadius: '15px',
-                            backgroundColor: 'green',
+                          color: "green",
+                          margin: "40px 0 15px 0",
+                          "& .MuiSlider-valueLabel": {
+                            borderRadius: "15px",
+                            backgroundColor: "green",
                           },
-                          '& .MuiSlider-rail': {
-                            padding: '5px',
+                          "& .MuiSlider-rail": {
+                            padding: "5px",
                           },
                         }}
                         aria-label="Car Miles"
@@ -579,14 +585,14 @@ const Calculator = () => {
                       <label className="slider">Plastic Waste in Kg</label>
                       <Slider
                         sx={{
-                          color: 'green',
-                          margin: '40px 0 15px 0',
-                          '& .MuiSlider-valueLabel': {
-                            borderRadius: '15px',
-                            backgroundColor: 'green',
+                          color: "green",
+                          margin: "40px 0 15px 0",
+                          "& .MuiSlider-valueLabel": {
+                            borderRadius: "15px",
+                            backgroundColor: "green",
                           },
-                          '& .MuiSlider-rail': {
-                            padding: '5px',
+                          "& .MuiSlider-rail": {
+                            padding: "5px",
                           },
                         }}
                         aria-label="Car Miles"
@@ -602,7 +608,6 @@ const Calculator = () => {
                     </Box>
                   </div>
                 </div>
-                
               </div>
               <div className="calculator-btn">
                 <button type="submit">Find My Footprint</button>
