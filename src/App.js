@@ -24,6 +24,9 @@ import About from "./pages/About";
 import AlertState from "./Context/Alert/AlertState";
 // import Alert from './components/Alert'
 import Dashboard from './pages/Dashboard';
+import Energy from "./components/Energy";
+import Waste from "./components/Waste";
+import BookComponent from "./components/BookComponent";
 // import ApexChart from './components/ApexChart';
 // import { ToastContainer } from "react-toastify";
 
@@ -60,8 +63,10 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/login" element={<Login />} />
             <Route path="/signup" element={<SignUp />} />
-            
+            <Route path="/energy" element={<Energy />} />
+            <Route path="/waste" element={<Waste />} />
             <Route path="/calculator" element={<Calculator />} />
+            <Route path='/slogan' element={<BookComponent/>} />
             <Route path="/myfootprint" element={<MyFootprint />} />
             <Route path="/mypledges" element={<MyPledges />} />
             <Route path="/dashboard" element={<Dashboard />} />

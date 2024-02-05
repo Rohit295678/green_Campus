@@ -117,8 +117,8 @@ const Home = () => {
                 cause global climate change.
               </p>
               <br />
-              <div className="home-h3">What can you do about it?</div>
-              <p>
+              <div className="home-h3 what">What can you do about it?</div>
+              <p className="what">
                 Small changes add up to a huge global impact. Change starts with
                 knowing your own carbon footprint and then changing what you can
                 to reduce it.
@@ -128,7 +128,7 @@ const Home = () => {
                 <strong>Make a pledge</strong> to change. <strong>Do it</strong>
                 . Mark your pledge <strong>complete</strong>.
               </p>
-              <div className="home-footer">
+              <div className="home-footer what">
                 If you want to say thank you for this free service, donate to
                 the organizations who are driving real systemic progress in the
                 fight against climate change.

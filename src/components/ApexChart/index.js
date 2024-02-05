@@ -145,16 +145,11 @@ const ApexChart = ({ graphData }) => {
         text: 'Co2 Emissions',
         align: 'left',
       },
-      labels: seriesData[0].data.map((_, index) => `Object ${index + 1}`),
+      labels: seriesData[0].data.map((_, index) => `Data ${index + 1}`),
 xaxis: {
-  type: 'datetime',
-  labels: {
-    formatter: function (val,i) {
-      const date = new Date(val);
-      return `Data ${date.getDate()} ${date.toLocaleString('default', {
-        month: 'short',
-      })} ${date.getFullYear()}`;
-    },
+  xaxis: {
+    type: 'category', // Use 'category' type for non-date labels
+    categories: seriesData[0].data.map((_, index) => `Data ${index + 1}`),
   },
 },
 

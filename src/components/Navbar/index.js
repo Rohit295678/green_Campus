@@ -119,6 +119,24 @@ const Navbar = () => {
             My Pledges
           </MenuItem>
           <MenuItem
+            component={<Link to="/waste" />}
+            onClick={() => {
+              setisSidebarExpanded(false);
+            }}
+          >
+            {" "}
+            Waste Management
+          </MenuItem>
+          <MenuItem
+            component={<Link to="/energy" />}
+            onClick={() => {
+              setisSidebarExpanded(false);
+            }}
+          >
+            {" "}
+            Energy Management
+          </MenuItem>
+          <MenuItem
             component={<Link to="/about" />}
             onClick={() => {
               setisSidebarExpanded(false);
@@ -182,6 +200,24 @@ const Navbar = () => {
           >
             {" "}
             Home
+          </MenuItem>
+          <MenuItem
+            component={<Link to="/waste" />}
+            onClick={() => {
+              setisSidebarExpanded(false);
+            }}
+          >
+            {" "}
+            Waste Management
+          </MenuItem>
+          <MenuItem
+            component={<Link to="/energy" />}
+            onClick={() => {
+              setisSidebarExpanded(false);
+            }}
+          >
+            {" "}
+            Energy Management
           </MenuItem>
           <MenuItem
             component={<Link to="/about" />}

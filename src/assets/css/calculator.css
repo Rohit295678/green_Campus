@@ -91,7 +91,11 @@
   @import url('https://fonts.googleapis.com/css?family=Nuto:400,700');
   
   
-  
+  @media screen and (max-width: 693px) {
+    .description{
+      margin: 0px;
+    }
+  }
   
   
   

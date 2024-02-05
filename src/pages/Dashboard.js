@@ -55,7 +55,6 @@ const Dashboard = () => {
                       <div
                         className="calculations left"
                         key={home._id}
-                        style={{ width: "30%" }}
                       >
                         <div className=" hoverbox">
                           <h1 className="footprint-title">

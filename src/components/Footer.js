@@ -21,22 +21,23 @@ export default function Component() {
     <Footer container className=''>
       <div className="w-full text-center ">
         <div className="w-full justify-between sm:flex sm:items-center sm:justify-between">
-          <Footer.Brand
+          {/* <Footer.Brand
             href="/"
+            src={logo}
             
             alt="CampusGreen Logo"
             name="CampusGreen"
             
-          />
+          /> */}
           <Footer.LinkGroup className=''>
-            <Footer.Link href="/about">About</Footer.Link>
-            <Footer.Link href="#">Privacy Policy</Footer.Link>
-            <Footer.Link href="#">Licensing</Footer.Link>
-            <Footer.Link href="#">Contact</Footer.Link>
+            <Footer.Link href="/about" className='m-1'>About</Footer.Link>
+            <Footer.Link href="#"  className='m-1'>Privacy Policy</Footer.Link>
+            <Footer.Link href="#"  className='m-1'>Licensing</Footer.Link>
+            <Footer.Link href="#"  className='m-1'>Contact</Footer.Link>
           </Footer.LinkGroup>
         </div>
         <Footer.Divider />
-        <Footer.Copyright href="#" by="GreenCampus™ " year={2024} />
+        <Footer.Copyright href="#" by="GreenCampus™ "  className='m-0 ' year={2024} />
       </div>
     </Footer>
   );
